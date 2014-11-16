@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>saKudarte</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+        <!-- OPEN SANS # 400, 400i, 600, 700, 700i -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400,600' rel='stylesheet' type='text/css'>
+        <!-- DROID SERIF # 400, 400i, 700, 700i -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="fonts/font-awesome-4.2.0/css/font-awesome.css">
+    <!-- animsition CSS -->
+    <link rel="stylesheet" href="css/animsition.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(39.467091, -0.369076),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false      
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <style>
+      #map_canvas {
+        width: 100%;
+        height: 650px;
+      }
+    </style>
+</head>
+
+<body>
+<div class="animsition">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top saku-nav" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="img/iso-brand.png" alt="isotype-sakudarte" title="Inicio">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html" class="animsition-link">Inicio<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="servicios.html" class="animsition-link">Servicios<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="projects.html" class="animsition-link">Proyectos<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="actions.html" class="animsition-link">Acciones<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="animsition-link">Nosotros<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="animsition-link">Blog<span class="liner"></span></a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="animsition-link">Contacto<span class="liner"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- language -->
+    <div class="lang">
+        <ul>
+            <li>
+                <a href="#" class="lang-active">ES</a>
+            </li>
+            <li>
+                <a href="#">EN</a>
+            </li>
+        </ul>
+    </div>
+<!--- Page Content  -->
+    <section id="contact-page">
+        <div class="col-xs-12">
+            <div id="map_canvas"></div>
+        </div>
+    </section>
+<!--- FOOTER  -->
+    <footer id="footer" class="clearfix container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                Conde Salvatierra de Álava n34 p8 | 46004 | Valencia | España <br/>
+                +34 96 344 77 05<br/>
+                hola@sakudarte.com<br/>
+            </div>
+            <div class="web-map">
+                <div class="col-sm-3">
+                    <ul>
+                        <li><a href="#">SOMOS</a></li>
+                        <li><a href="">SERVICIOS</a>
+                            <ul>
+                                <li><a href="">Departamento de marqueting online.</a></li>
+                                <li><a href="">Equipo de marqueting online.</a></li>
+                                <li><a href="">Departamento de ventas online.</a></li>
+                                <li><a href="">Identidad corporativa, Diseño e Ilustración, Desarrollo web, E-commerce, Contenidos, Social Media, Promoción Online, Formación</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul>
+                        <li><a href="">PROYECTOS</a></li>
+                        <li><a href="">CLIENTES</a></li>
+                        <li><a href="">CONTACTO</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>            
+        </div>
+        <div class="row social-media">
+            <ul class="  clearfix">
+                <li><a href="" class="sm-fa"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="" class="sm-tw"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="" class="sm-in"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="" class="sm-li"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="" class="sm-gp"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/sakudarte.js"></script>
+    <!-- animsition js -->
+    <script src="js/jquery.animsition.js"></script>
+    <script>
+        $(document).ready(function() {
+          
+          $(".animsition").animsition({
+          
+            inClass               :   'fade-in-down-sm',
+            outClass              :   'fade-out-down-sm',
+            inDuration            :    800,
+            outDuration           :    800,
+            linkElement           :   '.animsition-link', 
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            loading               :    true,
+            loadingParentElement  :   'body', //animsition wrapper element
+            loadingClass          :   'animsition-loading',
+            unSupportCss          : [ 'animation-duration',
+                                      '-webkit-animation-duration',
+                                      '-o-animation-duration'
+                                    ],
+            //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser. 
+            //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            
+            overlay               :   false,
+            
+            overlayClass          :   'animsition-overlay-slide',
+            overlayParentElement  :   'body'
+          });
+        }); 
+    </script>
+</div>
+</body>
+
+</html>
