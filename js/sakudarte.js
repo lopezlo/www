@@ -50,35 +50,35 @@ $(window).scroll(function() {
 //  PRODD-HOME
 //---------------//
 //Productos en la home
-$('.toDvo').click(function () {
+$('.to3').click(function () {
         $('#prodd *').removeClass('active');
-        $('.dvo').addClass('active');
-        $('.arrow-left.toDmo').addClass('active');
-        $('nav span.toDvo').addClass('active');
+        $('.prodd-3').addClass('active');
+        $('.arrow-left.to2').addClass('active');
+        $('nav span.to3').addClass('active');
 });
-$('.toDmo').click(function () {
-    if ($('.dvo').hasClass('active')) {
+$('.to2').click(function () {
+    if ($('.prodd-3').hasClass('active')) {
         
         $('#prodd *').removeClass('active');
-        $('.dmo').addClass('active');
-        $('.arrow-left.toDvo').addClass('active');
-        $('.arrow-right.toEmo').addClass('active');
-        $('nav span.toDmo').addClass('active');
+        $('.prodd-2').addClass('active');
+        $('.arrow-left.to3').addClass('active');
+        $('.arrow-right.to1').addClass('active');
+        $('nav span.to2').addClass('active');
         } 
-    else if ($('.emo').hasClass('active')) {
+    else if ($('.prodd-1').hasClass('active')) {
         
         $('#prodd *').removeClass('active');
-        $('.dmo').addClass('active');
-        $('.arrow-left.toDvo').addClass('active');
-        $('.arrow-right.toEmo').addClass('active');
-        $('nav span.toDmo').addClass('active');
+        $('.prodd-2').addClass('active');
+        $('.arrow-left.to3').addClass('active');
+        $('.arrow-right.to1').addClass('active');
+        $('nav span.to2').addClass('active');
         } else{};
 });
-$('.toEmo').click(function () {        
+$('.to1').click(function () {        
         $('#prodd *').removeClass('active');
-        $('.emo').addClass('active');
-        $('.arrow-right.toDmo').addClass('active');
-        $('nav span.toEmo').addClass('active');
+        $('.prodd-1').addClass('active');
+        $('.arrow-right.to2').addClass('active');
+        $('nav span.to1').addClass('active');
 
 });
 //---------------//
@@ -87,27 +87,47 @@ $('.toEmo').click(function () {
 //En la ficha de SERVICIOS el #prodd-compare contiene texto <p> variable
 //esta función coge la altura mas alta de las <p> y la deja como altura por defecto en todas.
 $(window).bind("load resize",function(e){
-           
+    //primero reseteamos el 'min-height'
+    $('.prodd-compare-item p').css('min-height', 0);    
+    //si es mayor de 750 aplicara el efecto 
     if ($(window).width() > 750) {
         
         $('#prodd-compare').each(function(){  
             
             //establece la altura mas alta a 0
             var highestBox = 0;
-            var box = '#prodd-compare p';
+            var box = '.prodd-compare-item p';
             $(box).each(function(){
                 //si esta es mas alta que 0 la pone como la mas alta
-                if($(this).height() > highestBox) 
-                   highestBox = $(this).height(); 
+                if($(this).outerHeight() > highestBox) 
+                   highestBox = $(this).outerHeight(); 
             });  
             //le da a todas la altura mas alta
             $(box).css('min-height', highestBox);
-            var highestBox = 0;
         });
     }
-    var highestBox = 0;
 });
+$(window).load(function(){
 
+    var count = 0;
+    var listItems = '.prodd-compare-item ul';
+
+    $(listItems).each(function(){
+
+        if($(this).children('li').length > count ){
+                count = $(this).children('li').length; 
+            }
+    });
+
+    console.log(count);
+
+    $(listItems).each(function(){
+        var add = count - $(this).children('li').length;
+        $(this).append(new Array(++add).join('<li>---</li>'));
+        var add = 0;
+    });
+
+});
 //---------------//
 //   ABOUT-NAV
 //---------------//
@@ -138,7 +158,25 @@ $.fn.followTo = function ( pos ) {
 var maxPos = $("#about").height() - $('#about nav').height();
 $('#about nav').followTo(maxPos);
 
-//PROJECTS
+//Esta función realiza la animacion del scroll con el menu 'nav'
+$(function() {
+  $('#about nav a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+
+//---------------//
+//    PROJECTS
+//---------------//
 //Esta funcion nos asegura que el "+" esté centrado verticalmente en su botón.
 $(window).bind("load resize",function(e){
     var h = $(".item-logo-ratio").width( );
@@ -185,7 +223,17 @@ $( ".action-list .action-item" ).click(function() {
 //---------------//
 //  PROJECT-PAGE
 //---------------//
-//Esta función añade el pie de foto
+//Esta función añade el pie de foto de un proyecto
 $('section#project-page .page-content img').each(function() {
     $(this).after( "<div class='img-title'>" + $(this).attr('title') + "</div>" ); 
+});
+
+
+//---------------//
+//    LANDING
+//---------------//
+$(window).load(function(){
+    $(".toggle-item h3").click(function(){
+        $(this).parent().toggleClass("active");
+    });
 });
