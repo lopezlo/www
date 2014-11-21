@@ -43,6 +43,9 @@ p{
 	font-size: 16px;
 	line-height: 1.5;
 }
+footer{
+	background-color: #eee;
+}
 
  /* ------------------------------------------ NAV ------------------------------------------*/
 
@@ -224,7 +227,7 @@ nav{
 	margin-top: 20px;
 	display: inline-block;
 	overflow: hidden;
-	width: 56px;
+	max-width: 56px;
  }
 .saku-btn-inf, .saku-btn-inf * {
 	-webkit-transition: all .3s ease-in-out 0s; 	
@@ -232,40 +235,34 @@ nav{
     transition: all .3s ease-in-out 0s;
 }
 .saku-btn-inf:hover{
-	width: auto;
+	max-width: 200px;
 	cursor: pointer;
  }
 .saku-btn-inf a{
 	padding: 15px 20px;
-	display: inline-block;
+	display: flex;
 	color: #fff;
 }
 .saku-btn-inf a i{
 	font-size: 20px;
-	display: inline;
-	padding-top: 2px;
-    transform: rotate(0deg);
-
+	display: inline-flex;
+	padding-top: 3px;
 }
 .saku-btn-inf:hover a i{
-	font-size: 16px;
-	-moz-transform: rotate(-180deg);
-	-ms-transform: rotate(-180deg); /* IE 9 */
-    -webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
-    transform: rotate(-180deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg);
 }
 .saku-btn-inf a span{
-	margin-left: 8px;
-	position: relative;
-	left: -10%;
+	margin-left: -15px;
 	opacity: 0;
-	display: inline;
+	display: inline-flex;
 }
 .saku-btn-inf:hover a span{
-	position: relative;
+	margin-left: 8px;
 	opacity: 1;
 	left:0px;
-
 }
 .saku-btn-gosht{
 	border:3px solid #333;
@@ -381,9 +378,11 @@ h1.extract{
 	text-transform: uppercase;
 	color: #0079AE;
 	line-height: 1;
-	-webkit-transition: all .3s ease 0s; 	
-    -moz-transition: all .3s ease 0s; 
-    transition: all .3s ease 0s; 
+}
+@media (max-width: 767px) {
+	h1.extract{
+		font-size: 18px;
+	}
 }
 
  /* ------------------------------------------ PRODUCTOS HOME ------------------------------------------*/
@@ -419,6 +418,7 @@ section#prodd>article{
 	font-size: 75px;
 	font-weight: 700;
 	color: #333;
+	margin-top: 0px;
  }
 .prodd-slider h2{
 	text-align: left;
@@ -436,6 +436,12 @@ section#prodd>article{
 	font-family: 'Droid Serif', sans-serif;
 	margin: 30px 0;
  }
+ @media (max-width: 767px) {
+	.prodd-slider p{
+		font-size: 16px;
+		margin: 30px 0;
+	}
+}
 .prodd-slider .prodd-1{
 	background: url(../img/bg-prodd-2.jpg) no-repeat center center scroll;
 	right: 100%;
@@ -714,6 +720,7 @@ section#services{
 	margin-top: 88px;
 	margin-bottom: 44px;
 	text-align: center;
+	padding: 0 88px;
 }
 #hashtags ul {
 	margin: 0;
@@ -789,7 +796,9 @@ section#services{
 #services #hashtags a:focus span::before {
 	background: #FF9300;	
 }
-
+#prodd-compare{
+	padding: 0;
+}
 #prodd-compare .prodd-compare-item{
 	margin-bottom: 88px;
 }
@@ -812,9 +821,6 @@ section#services{
 #prodd-compare .bg-prodd-3{ background-image: url(../img/bg-prodd-3.jpg);}
 
 
-@media (min-width: 768px) {
-	
-}
 #prodd-compare h1{
 	text-align: center;
 	font-size: 75px;
@@ -849,6 +855,7 @@ section#services{
 #prodd-compare p::first-letter{
 	margin-left: 50px;
 }
+
 #prodd-compare ul{
 	margin: 0;
 	padding: 0;
@@ -872,27 +879,45 @@ section#services{
 	background-color: #FF9300;
 	color: #ffffff;
 }
-#prodd-compare li.saku-btn-inf{
+#prodd-compare li.saku-btn-comp *{
+	-webkit-transition: all .3s ease-in-out 0s; 	
+    -moz-transition: all .3s ease-in-out 0s; 
+    transition: all .3s ease-in-out 0s;
+}
+#prodd-compare li.saku-btn-comp{
 	width: 100%;
 	text-align: center;
 	background-color: #0079AE;
 	margin-top: 0px;
+	font-size: 16px;
+	font-weight: 600;
 }
-#prodd-compare li.saku-btn-inf a{
+#prodd-compare li.saku-btn-comp a{
 	padding: 0;
 	line-height: 40px;
+	display: block;
+	color: #fff;
 }
-#prodd-compare li.saku-btn-inf a:hover{
-	background-color: #0079AE;
+#prodd-compare li.saku-btn-comp a i{
+	margin-left: 60px;
+	margin-right: 5px;
 }
-#prodd-compare li.saku-btn-inf a i{
-	position: relative;
-	left: 50%;
+#prodd-compare li.saku-btn-comp:hover a i{
+	margin-left: 0px;
+	-moz-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg); 
+    -webkit-transform: rotate(-135deg); 
+    transform: rotate(-135deg);
 }
-#prodd-compare li.saku-btn-inf:hover a i{
-	left: 0;
+#prodd-compare li.saku-btn-comp a span{
+	margin-left: -60px;
+	opacity: 0;
 }
+#prodd-compare li.saku-btn-comp:hover a span{
+	margin-left: 0px;
+	opacity: 1;
 
+}
  /* ------------------------------------------ LANDING ------------------------------------------*/
 section#landing{
 	width: 100%;
@@ -1049,7 +1074,15 @@ section#landing{
 	text-transform: uppercase;
 	font-weight: 700;
 }
-
+.prodd-ficha .title h2{
+	text-align: left;
+	color: #666;
+	font-size: 30px;
+	font-weight: 400;
+	font-family: 'Droid Serif', sans-serif;
+	font-style: italic;
+	margin-top: 0px;
+}
 .prodd-ficha .title p{
 	font-weight: 400;
 	font-style: italic;

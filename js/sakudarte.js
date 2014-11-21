@@ -107,6 +107,8 @@ $(window).bind("load resize",function(e){
         });
     }
 });
+//En este caso, la funcion lee la columna con mas filas
+//y rellena el resto con "---"
 $(window).load(function(){
 
     var count = 0;
@@ -118,8 +120,6 @@ $(window).load(function(){
                 count = $(this).children('li').length; 
             }
     });
-
-    console.log(count);
 
     $(listItems).each(function(){
         var add = count - $(this).children('li').length;
