@@ -129,7 +129,7 @@ $(window).load(function(){
 
 });
 //---------------//
-//   ABOUT-NAV
+//     ABOUT
 //---------------//
 //Esta función permite que el nav de el apartado about
 //esté fijo a la izquierda hasta que llega el footer
@@ -153,6 +153,12 @@ $.fn.followTo = function ( pos ) {
         }
     });
 };
+//Esta función muestra el formulario
+$("#cv span").click(function(){
+    $("#cv").toggleClass("active", 300);
+})
+
+
 //la altura max, maxPos = la altura del contenido - la altura del nav
 //aun así no lo hace del todo bien
 var maxPos = $("#about").height() - $('#about nav').height();
@@ -166,8 +172,8 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
+          scrollTop: target.offset().top - 88
+        }, 300);
         return false;
       }
     }
@@ -189,15 +195,15 @@ $(window).bind("load resize",function(e){
 //Esta función lee todos los .action-item dentro de .action-list
 //y le aplica a los primeros unas "class" especificas.
 var actionItem = $('.action-list .action-item');
-    $(actionItem).each(function(i) {
-        if (i == 0){
-           $(this).addClass('col-xs-12');
-        }if (i <= 2 && i !=0 ){
-           $(this).addClass('col-xs-6');
-        }if (i >= 3 ){
-            $(this).addClass('col-md-3 col-xs-6');
-        }
-    });
+$(actionItem).each(function(i) {
+    if (i == 0){
+       $(this).addClass('col-xs-12');
+    }if (i <= 2 && i !=0 ){
+       $(this).addClass('col-xs-6');
+    }if (i >= 3 ){
+        $(this).addClass('col-md-3 col-xs-6');
+    }
+});
 //Esta función le da un "margin-top" a la primera imagen y
 //un "margin-left" a todas las demas, dependiendo de su tamaño
 //para que de esta forma, siempre se queden centradas.
@@ -232,6 +238,7 @@ $('section#project-page .page-content img').each(function() {
 //---------------//
 //    LANDING
 //---------------//
+//Esta función realiza el efecto acordeon
 $(window).load(function(){
     $(".toggle-item h3").click(function(){
         $(this).parent().toggleClass("active");

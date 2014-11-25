@@ -330,7 +330,7 @@ section#home{
 	min-height: 100%;
 /*	height: 650px;*/
 	width: 100%;
-	background: url(../img/bg-home.jpg) no-repeat center center scroll;
+	background: url(../img/bg-home.jpg) no-repeat center center fixed;
     background-color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -383,13 +383,22 @@ h1.extract{
 	h1.extract{
 		font-size: 18px;
 	}
+	h1.claim{
+		font-size: 20px;
+		font-weight: 600;
+	}
 }
 
  /* ------------------------------------------ PRODUCTOS HOME ------------------------------------------*/
 section#prodd{
-	height:100%;
-	min-height: 900px;
+	height:90%;
+	min-height: 800px;
 	width: 100%;
+}
+@media (max-width: 480px) {
+	section#prodd{
+		min-height: 900px;
+	}
 }
 section#prodd *{
 	-webkit-transition: all .3s ease-in-out 0s; 	
@@ -397,7 +406,7 @@ section#prodd *{
     transition: all .3s ease-in-out 0s;
 }
 section#prodd>article{
-	padding: 120px 0;
+	padding: 80px 0;
 	min-height: 100%;
 	width:100%;
     background-color: #fff;
@@ -407,6 +416,11 @@ section#prodd>article{
     -o-background-size: cover;
     background-position: center center;
     position: absolute;
+}
+@media (max-width: 480px) {
+	section#prodd>article{
+	padding: 140px 0;
+	}
 }
 .prodd-slider{
 	position: relative;
@@ -645,10 +659,65 @@ section#prodd nav ul li span:hover{
 	background-color: #333;
 	color: #fff;
 }
-@media (max-width: 383px) {
+@media (max-width: 480px) {
 	section#prodd nav ul li{
 		float: none;
 		display: block; 
+	}
+}
+ /* ------------------------------------------ valores-HOME ------------------------------------------*/
+section#val-home{
+	width: 100%;
+	margin-bottom: 88px;
+}
+section#val-home article.val-1{background: url(../img/val1.jpg) fixed;}
+section#val-home article.val-2{background: url(../img/val2.jpg) fixed;}
+section#val-home article.val-3{background: url(../img/val3.jpg) fixed;}
+section#val-home article{
+	width: 100%;
+	min-height: 650px;
+	height: 100%;
+	background-color: #00bbf2;
+	background-attachment: fixed;
+	background-image: ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center
+
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+}
+section#val-home article h2{
+	font-family: 'Droid Serif', sans-serif;
+	font-style: italic;
+	font-size: 28px;
+	color: #fff;
+	text-align: center;
+	line-height: 1.5;
+}
+@media (max-width: 767px) {
+	section#val-home article h2{
+		font-size: 20px;
 	}
 }
  /* ------------------------------------------ contact-HOME ------------------------------------------*/
@@ -964,6 +1033,15 @@ section#landing{
 	color: #333;
 	padding: 0 0 20px;
 }
+#landing p.quote{
+	font-family: 'Droid Serif', sans-serif;
+	font-style: italic;
+	text-align: justify;
+	color: #999;
+	padding:15px 30px;
+	border-left: 3px solid #333;
+	margin-bottom: 20px;
+}
 #landing h2 ~ p{
 	font-family: 'Droid Serif', sans-serif;
 	text-align: left;
@@ -1278,21 +1356,55 @@ section#about{
 #other .other-item i{
 	margin-right: 5px;
 }
+
 #cv{
 	color: #fff;
-	height: 100%;
 	min-height: 650px;
 	width: 100%;
-	background: url(../img/bg-cv.jpg) no-repeat center center scroll;
+	background: url(../img/bg-cv.jpg) no-repeat center top scroll;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
 	text-align: center;
+	padding-bottom: 88px;
 }
 #cv span{
 	margin: 40px;
 	font-size: 50px;
+	cursor: pointer;
+	-webkit-transition: transform .2s ease 0s; 	
+    -moz-transition: transform .2s ease 0s; 
+    transition: transform .2s ease 0s; 
+}
+#cv span:hover{
+	color: #FF9300;
+}
+#cv #contact-form{
+	overflow: hidden;
+	max-height: 0px;
+	opacity: 0;
+	-webkit-transition: all .4s ease 0s; 	
+    -moz-transition: all .4s ease 0s; 
+    transition: all .4s ease 0s; 
+}
+#cv #contact-form input{
+	background-color: #fff;
+}
+#cv #contact-form .form-control::-webkit-input-placeholder {color: #aaa;}
+#cv #contact-form .form-control:-moz-placeholder { /* Firefox 18- */  color: #aaa;}
+#cv #contact-form .form-control::-moz-placeholder {  /* Firefox 19+ */  color: #aaa;}
+#cv #contact-form .form-control:-ms-input-placeholder {color: #aaa;}
+}
+#cv.active span{
+	-moz-transform: rotate(45deg); /* IE 9 */
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	transform: rotate(45deg);
+}
+#cv.active #contact-form{
+	max-height: 800px;
+	opacity: 1;
 }
 #cv h3{
 	text-transform: uppercase;
@@ -1302,6 +1414,14 @@ section#about{
 #cv p{
 	font-style: italic;
 }
+@media (max-width: 480px){
+	#cv h3{
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 30px;
+	}
+}
+
  /* ------------------------------------------ PROJECS ------------------------------------------*/
 section#projects{
 
@@ -1443,7 +1563,7 @@ section#clients{
 #clients .clients-logos li {
 	position: relative;
 	padding: 0;
-	margin: 0;
+	margin: 0 0 10px;
 	list-style: none;
 }
 #clients .clients-logos li:before{
@@ -1458,6 +1578,11 @@ section#clients{
 	bottom: 0;
 	left: 0;
 	width: 100%;
+}
+#clients .clients-logos li h1{
+	font-size: 16px;
+	font-style: italic;
+	padding: 0 15px;
 }
 /* ------------------------------------------ PROJECT-PAGE ------------------------------------------*/
 section#project-page{
@@ -1537,6 +1662,7 @@ section#project-page .page-content .img-title{
 section#actions{
 	width: 100%;
 	min-height: 100%;
+	padding-bottom: 88px;
 }
 #actions #filters{
 	margin: 20px 0;
@@ -1613,51 +1739,39 @@ section#actions{
     transition: all .2s ease-in-out 0s;
 }
 #actions .action-item article h1{
-	font-size: 25px;
 	font-weight: 700;
 	color: #fff;
 	text-align: center;
 	text-transform: uppercase;
-	padding: 20px 20px 5px 20px;
+	padding: 0 20px 5px 20px;
+	margin: 0;
 }
-/* crear condicionantes para los distintios tamaños, especificos de cada ancho*/
-#actions .action-item.col-xs-12 article h1{
-	font-size: 50px;
-	padding: 20px 20px 5px 20px;
-}
+#actions .action-item.col-xs-12 article h1{font-size: 50px; padding-top: 10%;}
+#actions .action-item.col-xs-6 article h1{font-size: 40px; padding-top: 10%;}
+#actions .action-item.col-md-3 article h1{font-size: 25px; padding-top: 5%;}
 #actions .action-item article h2{
-	font-size: 18px;
 	font-weight: 400;
 	font-style: italic;
 	color: #fff;
 	text-align: center;
 	padding: 5px 20px;
+	margin: 0;
 }
-#actions .action-item.col-xs-12 article h2{
-	font-size: 18px;
-	padding: 5px 20px;
-}
-@media (max-width: 767px){
-	#actions .action-item article h1{
-		font-size: 23px;
-		padding: 10px 10px 0px 10px;
-	}
-	#actions .action-item article h2{
-		font-size: 16px;
-		padding: 5px 10px;
-	}
+#actions .action-item.col-xs-12 article h2{font-size: 18px;}
+#actions .action-item.col-xs-6 article h2{font-size: 16px;}
+#actions .action-item.col-md-3 article h2{font-size: 14px;}
+@media (max-width: 991px) {
+	#actions .action-item.col-md-3 article h1{font-size: 40px; padding-top: 10%;}
+	#actions .action-item.col-md-3 article h2{font-size: 16px;}
+
 }
 @media (max-width: 480px){
-	#actions .action-item article h1{
-		font-size: 16px;
-		padding: 10px 5px 0px 5px;
-		margin: 0;
-	}
-	#actions .action-item article h2{
-		font-size: 14px;
-		padding: 5px 5px;
-		margin: 0;
-	}
+	#actions .action-item.col-xs-12 article h1{font-size: 25px; }
+	#actions .action-item.col-xs-6 article h1{font-size: 20px;}
+	#actions .action-item.col-xs-12 article h2{font-size: 14px;}
+	#actions .action-item.col-xs-6 article h2{font-size: 12px;}
+	#actions .action-item article h1,
+	#actions .action-item article h2{padding-left: 10px; padding-right: 10px;}
 }
 #actions .action-item article img{
 	position: absolute;
@@ -1742,10 +1856,29 @@ section#actions{
 section#contact-page{
 	width: 100%;
 	min-height: 100%;
-	padding-bottom: 88px;
 }
+#contact-page .contact-bg .half-1{
+	background: url(../img/biladi.jpg) no-repeat center center scroll;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 350px;
 
+}
+#contact-page .contact-bg .half-2{
+	background: url(../img/biladi.jpg) no-repeat center center scroll;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 350px;
+}
+#contact-page .contact{
+	padding: 88px 0px
+}
  /* ------------------------------------------ FOOTER ------------------------------------------*/
+
 footer{
 	padding-top: 88px;
 }

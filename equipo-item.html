@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
     <title>saKudarte</title>
 
     <!-- Bootstrap Core CSS -->
@@ -35,28 +34,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-      function initialize() {
-        var mapCanvas = document.getElementById('map_canvas');
-        var mapOptions = {
-          center: new google.maps.LatLng(39.467091, -0.369076),
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false      
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-
-        }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <style>
-      #map_canvas {
-        width: 100%;
-        height: 650px;
-      }
-    </style>
 </head>
 
 <body>
@@ -118,120 +95,56 @@
         </ul>
     </div>
 <!--- Page Content  -->
-
-<!--- home  -->
-    <section id="home">
-        <div class="col-xs-12 imagotipo">
-            <img src="img/imagotipo.png" alt="imagotipo-sakudarte">
-        </div>
-        <h1 class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1 claim">La clave está en las personas. #humanmarketing</h1>
-    </section>
-<!--- intro  -->
-    <section id="intro" class="clearfix">
-        <h1 class="col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 extract">Las empresas son personas. El verdadero valor de una compañía es su capacidad de atraer y desarrollar talento.
-        Creemos en las personas, en todas sus dimensiones.
-        Creemos que una buena idea en manos de un mal equipo puede resultar un desastre, mientras que una idea no tan brillante, en manos de un equipo excelente, puede ser un éxito.
-        Nos gusta trabajar con personas porque nos da la oportunidad de crecer y desarrollarnos mutuamente.
-        </h1>
-    </section>
-<!--- valores  -->
-    <section id="val-home" class="clearfix">
-        <article class="val-1">
-            <h2 class="col-xs-10 col-sm-8"><strong>Implicación</strong><br/>Somos uno más de tu empresa. Un equipo que entiende tu negocio y está atento a lo que pasa en el mercado. Personas que aplican sus conocimientos para que puedas vender más</h2>
-        </article>
-        <article class="val-2">
-            <h2 class="col-xs-10 col-sm-8"><strong>Empatía</strong><br/>Tratamos tu negocio como si fuera el nuestro. Atendemos tus inquietudes y escuchamos a tus clientes porque nuestra misión es darte las herramientas que te ayuden a vender más.</h2>
-        </article>
-        <article class="val-3">
-            <h2 class="col-xs-10 col-sm-8"><strog>Creatividad</strog><br/>Creatividad es encontrar soluciones nuevas a problemas viejos. Es pensar de forma diferente, pero sin perder de vista los objetivos. Es divertirnos con nuestro trabajo porque nos apasiona.</h2>
-        </article>
-    </section>
-<!--- prodd  -->
-    <section id="prodd" class="prodd-slider">
-         <article class="prodd-1">
-            <h1>emo</h1>
-            <div class="row">
-                <h2 class="col-md-7 col-md-offset-5 col-xs-10 col-xs-offset-1">
-                Equipo<br/>
-                Marketing<br/>
-                Online</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-7 col-md-4 col-md-offset-6 col-xs-10 col-xs-offset-1 clearfix">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <div class="saku-btn-inf"><a href="producto.html"><i class="fa fa-plus"></i><span>información</span></a></div>
-                </div>
-            </div>
-            <span class="arrow-right active to1">  &lt <br />e</span>
-            <span class="arrow-right to2">  &gt <br />m</span>
-        </article>
-        <article class="prodd-2 active">
-            <h1>dmo</h1>
-            <div class="row">
-                <h2 class="col-md-7 col-md-offset-5 col-xs-10 col-xs-offset-1">
-                Departamento<br/>
-                Marketing<br/>
-                Online</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-7 col-md-4 col-md-offset-6 col-xs-10 col-xs-offset-1 clearfix">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <div class="saku-btn-inf"><a href="producto.html" class="animsition-link"><i class="fa fa-plus"></i><span>información</span></a></div>
-                </div>
-            </div>
-        </article>
-        <article class="prodd-3">
-            <h1>dvo</h1>
-            <div class="row">
-                <h2 class="col-md-7 col-md-offset-5 col-xs-10 col-xs-offset-1">
-                Departamento<br/>
-                Ventas<br/>
-                Online</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-7 col-md-4 col-md-offset-6 col-xs-10 col-xs-offset-1 clearfix">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <div class="saku-btn-inf"><a href="producto.html"><i class="fa fa-plus"></i><span>información</span></a></div>
-                </div>
-            </div>
-            <span class="arrow-left active to3">  &gt <br />v</span>
-            <span class="arrow-left to2">  &lt <br />m</span>
-        </article>
-        <nav class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-            <ul class="clearfix">
-                <li><span class="to1">emo</span></li>
-                <li><span class="to2 active">dmo</span></li>
-                <li><span class="to3">dvo</span></li>
-            </ul>
-        </nav>
-    </section>
-<!--- form  -->
-    <section id="contact-home" class="clearfix container-fluid">
+    <section id="landing">
         <div class="row">
-            <div id="contact-form" class="col-md-6 col-md-push-6">
-                <h3>ven a vernos</h3>
-                <p>Conde Salvatierra de Álava 34 pta 8 | 46004 | Valencia | España<br/>+34 96 344 77 05 | hola@sakudarte.com</p>
-                <form role="form" class="clearfix">
-                    <div class="form-group">
-                        <label for="InputName">Nombre</label>
-                        <input type="text" class="form-control" id="InputName" placeholder="Pon aquí tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputEmail">Email</label>
-                        <input type="email" class="form-control" id="InputEmail" placeholder="Y aquí tu email">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputTextarea">Mensaje</label>
-                        <textarea type="text" class="form-control" id="InputTextarea" row="8" placeholder="Pon aquí tu mensaje, duda, pregunta... "></textarea> 
-                    </div>
-                    <button type="submit" class="saku-btn-gosht">Envía tu pregunta</button>
-                </form>
+            <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            	<span class="back">
+            		<a href="about.html" >
+            			&lt;  volver
+            		</a>
+            	</span>
+                <h1>Biladi Lujan</h1>
+                <p>Trabajo para hacer un mundo mejor. Y un mundo mejor es aquel en el que las personas y las empresas saben qué valor aportan a la sociedad y son capaces de comunicarlo.
+                Tus clientes no compran lo que haces, sino por qué lo haces. Y precisamente ése “para qué” es el mejor punto de partida para una comunicación eficaz.</p>
+                <p class="quote">Quizás mi mayor talento es “saber ver”. Creo en las personas. Creo que todos somos únicos. Me gusta combinar la intuición y el sentido práctico.</p>
+                <p>Después de más de 15 años de experiencia profesional, creamos Sakudarte. Una empresa que responde a las necesidades de muchas compañías en la actualidad. Empresas que quieren mejorar su comunicación, pero que no desean incrementar sus costes fijos incorporando un Director/a de Comunicación, sino que prefieren a un equipo de profesionales que además de pensar… hace!</p>
+                <p>Desde Sakudarte practicamos una comunicación que “funciona”. Una comunicación de dentro afuera, partiendo desde lo que el cliente sabe hacer mejor y es único. Nos convertimos en su Departamento de Marketing Online… definiendo la estrategia y ejecutando las acciones.</p>
+                             
             </div>
-            <div class="col-md-6 col-md-pull-6">
-                <div id="map_canvas"></div>
+            <div class="col-sm-5 col-md-offset-1 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <img src="img/biladi.jpg" alt="">
+                <ul class="landing-share">
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-external-link fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -293,8 +206,6 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="js/sakudarte.js"></script>
-    <!-- vendor js -->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
     <!-- animsition js -->
     <script src="js/jquery.animsition.js"></script>
     <script>
