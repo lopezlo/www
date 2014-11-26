@@ -699,7 +699,7 @@ section#val-home article{
 	-ms-flex-pack: center;
 	-webkit-justify-content: center;
 	-moz-justify-content: center;
-	justify-content: center
+	justify-content: center;
 
 	-webkit-box-align: center;
 	-ms-flex-align: center;
@@ -1396,7 +1396,7 @@ section#about{
 #cv #contact-form .form-control::-moz-placeholder {  /* Firefox 19+ */  color: #aaa;}
 #cv #contact-form .form-control:-ms-input-placeholder {color: #aaa;}
 }
-#cv.active span{
+#cv.active div span{
 	-moz-transform: rotate(45deg); /* IE 9 */
 	-ms-transform: rotate(45deg); /* IE 9 */
 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
