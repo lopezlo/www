@@ -677,7 +677,7 @@ section#val-home article{
 	width: 100%;
 	min-height: 650px;
 	height: 100%;
-	background-color: #00bbf2;
+	background-color: #0079AE;
 	background-attachment: fixed;
 	background-image: ;
     -webkit-background-size: cover;
@@ -687,8 +687,6 @@ section#val-home article{
     background-position: center center;
     background-repeat: no-repeat;
     
-
-
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -706,6 +704,11 @@ section#val-home article{
 	-webkit-align-items: center;
 	-moz-align-items: center;
 	align-items: center;
+
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
 }
 section#val-home article h2{
 	font-family: 'Droid Serif', sans-serif;
@@ -715,10 +718,23 @@ section#val-home article h2{
 	text-align: center;
 	line-height: 1.5;
 }
+section#val-home article h2 strong{
+	font-size: 34px;
+}
 @media (max-width: 767px) {
 	section#val-home article h2{
 		font-size: 20px;
 	}
+}
+section#val-home article .val-more{
+	font-weight: 700;
+	font-size: 100px;
+	color: #fff;
+	text-align: center;
+	padding: 0 40px;
+}
+section#val-home article .val-more:hover{
+	color: #FF9300;
 }
  /* ------------------------------------------ contact-HOME ------------------------------------------*/
 section#contact-home{
@@ -871,6 +887,9 @@ section#services{
 #prodd-compare .prodd-compare-item{
 	margin-bottom: 88px;
 }
+#prodd-compare .prodd-compare-item>a{
+	display: block;
+}
 #prodd-compare .bg-prodd-1,
 #prodd-compare .bg-prodd-2,
 #prodd-compare .bg-prodd-3{
@@ -884,17 +903,35 @@ section#services{
     background-repeat: no-repeat;
     background-attachment: scroll;
     padding: 20px;
+    -webkit-transition: all .2s ease 0s; 	
+    -moz-transition: all .2s ease 0s; 
+    transition: all .2s ease 0s;
 }
 #prodd-compare .bg-prodd-1{ background-image: url(../img/bg-prodd-1.jpg);}
 #prodd-compare .bg-prodd-2{ background-image: url(../img/bg-prodd-2.jpg);}
 #prodd-compare .bg-prodd-3{ background-image: url(../img/bg-prodd-3.jpg);}
-
-
+#prodd-compare a:hover .bg-prodd-1,
+#prodd-compare a:hover .bg-prodd-2,
+#prodd-compare a:hover .bg-prodd-3{
+	-webkit-box-shadow: inset 0px -10px 0px 0px rgba(255, 147, 0, 1);
+	-moz-box-shadow: inset 0px -10px 0px 0px rgba(255, 147, 0, 1);
+	box-shadow: inset 0px -10px 0px 0px rgba(255, 147, 0, 1);
+}
 #prodd-compare h1{
 	text-align: center;
 	font-size: 75px;
 	text-transform: uppercase;
 	font-weight: 700;
+	color: #333;
+	-webkit-transition: all .2s ease 0s; 	
+    -moz-transition: all .2s ease 0s; 
+    transition: all .2s ease 0s;
+}
+#prodd-compare a:hover h1{
+	color: #FF9300;
+	text-shadow: 0px 5px 0px rgba(255, 147, 0, 0.5);
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 #prodd-compare h2{
 	text-align: left;
@@ -1256,8 +1293,23 @@ section#about{
 #about #lean,
 #about #are,
 #about #team,
-#about #other,{
-	padding: 88px;
+#about #other{
+	padding: 88px 0 0;
+}
+#about #lean .lean-more{
+	display: block;
+	background-color: #fff;
+	color: #0079AE;
+	font-size: 14px;
+	font-weight: 400;
+}
+#about #lean .lean-more span{
+	font-size: 100px;
+	font-weight: 700;
+	line-height: 1;
+}
+#about #lean .lean-more:hover span{
+	color: #FF9300;
 }
 #about h2{
 	text-transform: uppercase;
@@ -1269,24 +1321,6 @@ section#about{
 	content: "-";
 	display: block;
 }
-#about .graphic-lean {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 20px 0;
-}
-#about .graphic-lean li{
-	display: inline-block;
-	font-size: 50px;
-}
-#about .graphic-lean li:after{
-	font-weight: 700;
-	margin: 0 10px;
-	content: ">";
-}
-#about .graphic-lean li:last-child:after{
-	content: "";
-}
-
 #about p {
 	margin:  0 0 10px;
 }
@@ -1295,19 +1329,16 @@ section#about{
 	margin-bottom: 50px;
 }
 @media (min-width: 992px) {
-	#team .team-item:nth-child(odd) .team-item-img{
-		left: 50%;
+	#team .team-item:nth-of-type(4n+2){
+		margin-right: 33.33333333%;
 	}
-	#team .team-item:nth-child(odd) .team-item-img + div{
-		right: 50%;
+	#team .team-item:nth-of-type(4n+3){
+		margin-left: 33.33333333%;
 	}
 }
-@media (min-width: 1200px) {
-	#team .team-item:nth-child(odd) .team-item-img{
-		left: 33.33333333%;
-	}
-	#team .team-item:nth-child(odd) .team-item-img + div{
-		right: 66.66666667%;
+@media (max-width: 480px) {
+	#team .team-item{
+		width: 100%;
 	}
 }
 #team .team-item h3,
@@ -1325,38 +1356,11 @@ section#about{
 	font-style: italic;
 	display: block;
 }
-#about .team-item h4:after{
+#team .team-item h4:after{
 	content: "-";
 	display: block;
 	padding: 5px 0;
 }
-#about .team-item ul{
-	padding: 10px 0;
-	margin: 0;
-}
-#about .team-item li{
-	display: inline-block;
-	margin-right: 10px;
-
-}
-#about .team-item li a{
-	font-size: 20px;
-	color: #aaaaaa;
-	line-height: 10px;
-	display: block;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	padding-top: 5px;
-}
-#about .team-item a:hover,
-#other .other-item a:hover{
-	color: #FF9300;
-}
-#other .other-item i{
-	margin-right: 5px;
-}
-
 #cv{
 	color: #fff;
 	min-height: 650px;

@@ -45,7 +45,14 @@ $(window).scroll(function() {
             
         }
     });
-
+$(document).ready(function(){   
+    //Click event to scroll to top
+    $('.navbar-brand').click(function(){
+        $('html, body').animate({scrollTop : 0},300);
+        return false;
+    });
+    
+});
 //---------------//
 //  PRODD-HOME
 //---------------//
@@ -158,7 +165,6 @@ $("#cv span").click(function(){
     $("#cv").toggleClass("active", 300);
 })
 
-
 //la altura max, maxPos = la altura del contenido - la altura del nav
 //aun así no lo hace del todo bien
 var maxPos = $("#about").height() - $('#about nav').height();
@@ -172,7 +178,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - 88
+          scrollTop: target.offset().top
         }, 300);
         return false;
       }
