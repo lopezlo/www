@@ -1620,6 +1620,11 @@ section#project-page .page-content h1{
 	color: #333;
 	font-weight: 700;
 }
+@media (max-width: 767px){
+	section#project-page .page-content h1{
+		font-size: 30px;
+	}
+}
 section#project-page .page-content h2{
 	font-size: 16px;
 	color: #aaa;
