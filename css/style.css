@@ -1177,8 +1177,8 @@ section#landing{
 	display: block;
 }
 @media (max-width: 480px) {
-	.prodd-ficha h1{
-		font-size: 75px;
+	.prodd-ficha .title h1{
+		font-size: 80px;
 	}
 	.prodd-ficha .ventajas{
 		margin: 50px 0;
