@@ -138,6 +138,29 @@ $(window).load(function(){
 //---------------//
 //     ABOUT
 //---------------//
+//Esta funcion es similar a la de la ficha de SERVICIOS,
+//pero aplicada al alto de los '.team-item' asi nos evitamos que descuadre
+$(window).bind("load resize",function(e){
+    //primero reseteamos el 'min-height'
+    $('.team-item p').css('min-height', 0);    
+    //si es mayor de 750 aplicara el efecto 
+    if ($(window).width() >= 480) {
+        
+        $('.team-item').each(function(){  
+            
+            //establece la altura mas alta a 0
+            var highestBox = 0;
+            var box = '.team-item p';
+            $(box).each(function(){
+                //si esta es mas alta que 0 la pone como la mas alta
+                if($(this).outerHeight() > highestBox) 
+                   highestBox = $(this).outerHeight(); 
+            });  
+            //le da a todas la altura mas alta
+            $(box).css('min-height', highestBox);
+        });
+    }
+});
 //Esta función permite que el nav de el apartado about
 //esté fijo a la izquierda hasta que llega el footer
 var windw = this;
@@ -160,15 +183,11 @@ $.fn.followTo = function ( pos ) {
         }
     });
 };
-//Esta función muestra el formulario
-$("#cv span").click(function(){
-    $("#cv").toggleClass("active", 300);
-})
-
 //la altura max, maxPos = la altura del contenido - la altura del nav
 //aun así no lo hace del todo bien
-var maxPos = $("#about").height() - $('#about nav').height();
+var maxPos = $("#we").height() + $("#lean").height() + $("#are").height() + $("#team").height() + $("#other").height();
 $('#about nav').followTo(maxPos);
+
 
 //Esta función realiza la animacion del scroll con el menu 'nav'
 $(function() {
@@ -185,7 +204,10 @@ $(function() {
     }
   });
 });
-
+//Esta función muestra el formulario
+$("#cv span").click(function(){
+    $("#cv").toggleClass("active", 300);
+})
 //---------------//
 //    PROJECTS
 //---------------//
